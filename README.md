@@ -21,9 +21,35 @@ for example the sentence below there are 21 tokens, and 21*21=441 combinations t
 while the core of Mamba model is RNN , lets see why?
 
 because RNN is linear architecture :
-<img src="assets/RNN.png"/>
+<img src="assets/RNN.png" width="60%"/>
 
 RNN Issues :
 1. Fast for generation but slow in training.
 2. Collapse all the information down to a hidden space, and tend to forget information on longer sequences.
 
+lets dive into the architecture of Mamba:
+<img src="assets/mamba_architecture.png"/>
+
+as we can see from the architecture the new is 
+**SSM (Structured State Space Model)** : 
+are at the core of Mamba, so it is important to note how they work. You can think of them as the replacement for the self attention mechanism in a transformer,<br/><br/>
+
+A state space model takes in a 1D input sequence, maps to a N-D latent space and then projects back to a 1D output sequence.
+
+<img src="assets/statespace.png" width="60%"/>
+
+
+**SSMs** like S4 can be defined as through these equations: 
+
+```
+h'(t) = Ah(t) + Bx(t)
+y(t) = Ch(t)
+```
+the first equation : 
+<img src="assets/ht.png"/>
+
+the second equation : 
+<img src="assets/yt.png"/>
+
+## Refrences : 
+https://blog.oxen.ai/mamba-linear-time-sequence-modeling-with-selective-state-spaces-arxiv-dives/
