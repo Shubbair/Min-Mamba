@@ -24,7 +24,6 @@ for example the sentence below there are 21 tokens, and 21*21=441 combinations t
 <img src="assets/attention.jpeg"/>
 <br/><br/>
 
-
 ## Refrences : 
 https://blog.oxen.ai/mamba-linear-time-sequence-modeling-with-selective-state-spaces-arxiv-dives/
 https://srush.github.io/annotated-s4/
